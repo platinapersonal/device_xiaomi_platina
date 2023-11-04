@@ -7,6 +7,10 @@
 # Inherit from sdm660-common
 $(call inherit-product, device/xiaomi/sdm660-common/sdm660.mk)
 
+# Include our private certificate
+-include vendor/unsa-priv/keys/keys.mk
+-include vendor/unsa-priv/extras/unsa.mk
+
 # APEX
 ENABLE_APEX := true
 
@@ -50,6 +54,9 @@ PRODUCT_COPY_FILES += \
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
     $(LOCAL_PATH)/overlay-lineage
+
+DEVICE_PACKAGE_OVERLAYS += \
+   $(LOCAL_PATH)/overlay-afterlife
 
 PRODUCT_PACKAGES += \
     PlatinaApertureOverlay \
