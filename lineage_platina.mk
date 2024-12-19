@@ -16,8 +16,11 @@ PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_NAME := lineage_platina
 PRODUCT_MODEL := MI 8 Lite
 
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    TARGET_PRODUCT=platina \
-    PRIVATE_BUILD_DESC="platina-user 10 QKQ1.190910.002 V12.0.3.0.QDTMIXM release-keys"
+PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS := true
+PRODUCT_ENABLE_UFFD_GC := false
 
-BUILD_FINGERPRINT := Xiaomi/platina/platina:10/QKQ1.190910.002/V12.0.3.0.QDTMIXM:user/release-keys
+# Fingerprint
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    BuildDesc="platina-user 10 QKQ1.190910.002 V12.0.3.0.QDTMIXM release-keys"\
+    BuildFingerprint=Xiaomi/platina/platina:10/QKQ1.190910.002/V12.0.3.0.QDTMIXM:user/release-keys \
+    DeviceProduct=platina
